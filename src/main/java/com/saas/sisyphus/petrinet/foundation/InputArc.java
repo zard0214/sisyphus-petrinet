@@ -6,6 +6,6 @@ package com.saas.sisyphus.petrinet.foundation;
  * @date Created in 09/02/2023 20:51
  */
 
-public abstract class Arc {
+public class InputArc extends Arc {
 
 }

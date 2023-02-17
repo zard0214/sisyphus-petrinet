@@ -7,5 +7,6 @@ package com.saas.sisyphus.petrinet.foundation;
  */
 public class Context {
 
+    public static PetriNetMachine petriNetMachine = new PetriNetMachine();
 
 }
