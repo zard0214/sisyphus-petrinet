@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @date Created in 17/02/2023 09:07
  */
 @Data
-public class TokensSet {
+public class TokenSet {
 
     private ArrayList list = new ArrayList();
 }

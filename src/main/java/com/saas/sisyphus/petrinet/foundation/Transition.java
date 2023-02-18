@@ -11,7 +11,7 @@ public class Transition extends Component implements PetriNetEngine<Context> {
 
     public Transition(){
         this.id = String.valueOf(SEQUENCE_ID);
-        SEQUENCE_ID ++;
+        getNextSequenceId();
     }
 
     public String getLabel() {

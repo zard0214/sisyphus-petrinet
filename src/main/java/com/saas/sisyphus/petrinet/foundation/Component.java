@@ -17,4 +17,8 @@ public class Component {
     public int volume = 0;
 
     public String label;
+
+    public static long getNextSequenceId() {
+        return SEQUENCE_ID ++;
+    }
 }

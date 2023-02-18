@@ -11,11 +11,11 @@ import lombok.Data;
 @Data
 public class Place extends Component {
 
-    private TokensSet tokensSet = new TokensSet();
+    private TokenSet tokenSet = new TokenSet();
 
     public Place(){
         this.id = String.valueOf(SEQUENCE_ID);
-        SEQUENCE_ID ++;
+        getNextSequenceId();
     }
 
     public String getLabel() {
@@ -24,4 +24,5 @@ public class Place extends Component {
         }
         return label;
     }
+
 }
