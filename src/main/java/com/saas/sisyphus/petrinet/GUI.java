@@ -7,5 +7,5 @@ import javax.swing.*;
  * @RegistrationNo 220186627
  * @date Created in 17/02/2023 09:46
  */
-public class PetriNetGUI extends JFrame {
+public class GUI extends JFrame {
 }
