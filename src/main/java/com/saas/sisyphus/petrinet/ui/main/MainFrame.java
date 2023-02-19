@@ -2,6 +2,8 @@ package com.saas.sisyphus.petrinet.ui.main;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.formdev.flatlaf.icons.FlatClearIcon;
+import com.saas.sisyphus.petrinet.ui.component.PetriNetCanvas;
+import com.saas.sisyphus.petrinet.ui.utils.ConsoleUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,10 +21,11 @@ import java.awt.event.MouseListener;
 @Slf4j
 public class MainFrame extends JFrame{
 
-    private JTextArea logArea = new JTextArea();
+    private JTextArea console = new JTextArea();
     private NorthPanel northPanel = new NorthPanel();
     private EastPanel eastPanel = new EastPanel();
     private CenterPanel centerPanel = new CenterPanel();
+    private PetriNetCanvas petriNetCanvas = new PetriNetCanvas();
     private WestPanel westPanel = new WestPanel();
     private JScrollPane jScrollPane = new JScrollPane();
     private JOptionPane warningOptionPane = new JOptionPane();
@@ -43,26 +46,43 @@ public class MainFrame extends JFrame{
                 jScrollPane,
                 cleanButton
         );
+
         TabFramePanel tabFramePanel = new TabFramePanel(tabFrameItem);
 
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new BorderLayout());
         jPanel.add(northPanel, BorderLayout.NORTH);
         jPanel.add(eastPanel, BorderLayout.EAST);
-        jPanel.add(centerPanel, BorderLayout.CENTER);
+//        jPanel.add(centerPanel, BorderLayout.CENTER);
+        jPanel.add(petriNetCanvas, BorderLayout.CENTER);
         jPanel.add(westPanel, BorderLayout.WEST);
         jPanel.add(tabFramePanel, BorderLayout.SOUTH);
+
         this.add(jPanel);
+
+        //test
+        Runnable runnable = () -> {
+            while (true) {
+                try {
+                    Thread.sleep(5000);
+                    ConsoleUtil.log(console, "T1 fired.\n" + "----------------------------");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 
     private void initJScrollPane() {
         jScrollPane.setEnabled(false);
-        jScrollPane.setViewportView(logArea);
+        jScrollPane.setViewportView(console);
     }
 
     private void initLogArea() {
-        logArea.setEditable(false);
-        logArea.addMouseListener(new MouseListener() {
+        console.setEditable(false);
+        console.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int button = e.getButton();
@@ -92,26 +112,24 @@ public class MainFrame extends JFrame{
 
             }
         });
-
-        cleanButton = new JButton(new FlatClearIcon());
-
-        cleanButton.addActionListener(e -> {
-            logArea.append("T1 fired.\n");
-            logArea.append("----------------------------\n");
-        });
+//
+//        cleanButton = new JButton(new FlatClearIcon());
+//
+//        cleanButton.addActionListener(e -> {
+//            ConsoleUtil.log(console, "T1 fired.\n" + "----------------------------");
+//        });
     }
 
     private void showDialog() {
         Window window = SwingUtilities.windowForComponent( this );
         int option = JOptionPane.showOptionDialog(
                 window,
-                "Clean all",
+                "Are you wanna clean all logs? ",
                 "Warning",
                 JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.WARNING_MESSAGE, null, null, "4");
         if(option == JOptionPane.OK_OPTION){
-            logArea.selectAll();
-            logArea.replaceSelection("");
+            ConsoleUtil.clear(console);
         }
     }
 }

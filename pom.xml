@@ -23,6 +23,8 @@
         <logback-classic.version>1.4.4</logback-classic.version>
         <logback-core.version>1.4.4</logback-core.version>
 
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+
     </properties>
 
     <dependencies>
@@ -78,6 +80,12 @@
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout-swing</artifactId>
             <version>${miglayout-swing.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
     </dependencies>

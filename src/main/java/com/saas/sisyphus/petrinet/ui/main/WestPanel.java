@@ -15,7 +15,7 @@ public class WestPanel extends JPanel {
     public WestPanel(){
         initComponents();
         Dimension size = getSize();
-        size.width = 400;
+        size.width = 0;
         setPreferredSize(size);
     }
 

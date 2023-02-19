@@ -1,0 +1,12 @@
+JFDML JFormDesigner: "8.0.2.0.220" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormNonVisual( "java.awt.geom.Line2D" ) {
+			name: "this"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}

@@ -7,16 +7,20 @@ package com.saas.sisyphus.petrinet.foundation;
  */
 public class Operation {
 
-    private static final int ADD_PLACE = 0;
+    public static final int SELECT = 0;
 
-    private static final int ADD_TRANSITION = 1;
+    public static final int ADD_PLACE = 1;
 
-    private static final int ADD_ARC = 2;
+    public static final int ADD_TRANSITION = 2;
 
-    private static final int RUN = 3;
+    public static final int ADD_ARC = 3;
 
-    private static final int DELETE_COMPONENT = 4;
+    public static final int RUN = 4;
 
-    private static final int DEL = 4;
+    public static final int STEP = 5;
+
+    public static final int DELETE_COMPONENT = 6;
+
+    public static final int DEL = 7;
 
 }
