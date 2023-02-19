@@ -23,23 +23,17 @@ public class MainFrame extends JFrame{
     private JTextArea logArea = new JTextArea();
     private JScrollPane jScrollPane = new JScrollPane();
     private JOptionPane warningOptionPane = new JOptionPane();
+    private JButton cleanButton = new JButton(new FlatClearIcon());
 
     public MainFrame(){
         initComponents();
     }
 
     private void initComponents() {
+
         initLogArea();
 
-        JButton cleanButton = new JButton(new FlatClearIcon());
-
-        cleanButton.addActionListener(e -> {
-            logArea.append("T1 fired.\n");
-            logArea.append("----------------------------\n");
-        });
-
-        jScrollPane.setEnabled(false);
-        jScrollPane.setViewportView(logArea);
+        initJScrollPane();
 
         TabFrameItem tabFrameItem = new TabFrameItem(
                 new JToggleButton("Log", new FlatSVGIcon("com/sisyphus/petrinet/icons/copy.svg", 20, 20)),
@@ -53,6 +47,11 @@ public class MainFrame extends JFrame{
         jPanel.add(jTextArea, BorderLayout.CENTER);
         jPanel.add(tabFramePanel, BorderLayout.SOUTH);
         this.add(jPanel);
+    }
+
+    private void initJScrollPane() {
+        jScrollPane.setEnabled(false);
+        jScrollPane.setViewportView(logArea);
     }
 
     private void initLogArea() {
@@ -86,6 +85,13 @@ public class MainFrame extends JFrame{
             public void mouseExited(MouseEvent e) {
 
             }
+        });
+
+        cleanButton = new JButton(new FlatClearIcon());
+
+        cleanButton.addActionListener(e -> {
+            logArea.append("T1 fired.\n");
+            logArea.append("----------------------------\n");
         });
     }
 

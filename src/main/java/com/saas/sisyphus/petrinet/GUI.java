@@ -1,12 +1,12 @@
 package com.saas.sisyphus.petrinet;
 
 import com.formdev.flatlaf.FlatDarculaLaf;
-import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.util.SystemInfo;
 import com.saas.sisyphus.petrinet.ui.main.MainFrame;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Zhecheng Zhao
@@ -40,7 +40,10 @@ public class GUI {
             MainFrame frame = new MainFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLocationRelativeTo(null);
-
+            Dimension size = frame.getSize();
+            size.height = 1200;
+            size.width = 2000;
+            frame.setPreferredSize(size);
             frame.pack();
             frame.setVisible(true);
         });
