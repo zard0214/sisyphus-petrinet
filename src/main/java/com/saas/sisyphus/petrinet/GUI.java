@@ -1,13 +1,12 @@
 package com.saas.sisyphus.petrinet;
 
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.FlatDarculaLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.util.SystemInfo;
-import com.saas.sisyphus.petrinet.graphics.Main;
+import com.saas.sisyphus.petrinet.ui.main.MainFrame;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * @author Zhecheng Zhao
@@ -18,6 +17,10 @@ import java.awt.*;
 public class GUI {
 
     static boolean screenshotsMode = Boolean.parseBoolean(System.getProperty("screenshotsMode"));
+
+    static {
+        FlatDarculaLaf.setup();
+    }
 
     public static void main(String[] args) {
         if (SystemInfo.isMacOS) {
@@ -32,19 +35,15 @@ public class GUI {
         if (GUI.screenshotsMode && !SystemInfo.isJava_9_orLater && System.getProperty("flatlaf.uiScale") == null) {
             System.setProperty("flatlaf.uiScale", "2x");
         }
-        int width = Toolkit.getDefaultToolkit().getScreenSize().width;
-        int height = Toolkit.getDefaultToolkit().getScreenSize().height;
-        FlatDarkLaf.install();
-        FlatLaf.registerCustomDefaultsSource("");
-        JFrame frame = new JFrame("Petri Net Simulator");
-//        frame.setContentPane(Home.getInstance().home);
-        frame.setContentPane(Main.getInstance().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(width,
-                height);
-        frame.setLocationRelativeTo(null);
-//        frame.setResizable(false);
-        frame.pack();
-        frame.setVisible(true);
+
+        SwingUtilities.invokeLater(() -> {
+            MainFrame frame = new MainFrame();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setLocationRelativeTo(null);
+
+            frame.pack();
+            frame.setVisible(true);
+        });
+
     }
 }
