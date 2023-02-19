@@ -1,7 +1,10 @@
 package com.saas.sisyphus.petrinet.ui.main;
 
+import lombok.Data;
+
 import javax.swing.*;
 
+@Data
 public class TabFrameItem {
 
     private JToggleButton toolBarItemBtn;
@@ -34,11 +37,4 @@ public class TabFrameItem {
         }
     }
 
-    public JToggleButton getToolBarItemBtn() {
-        return toolBarItemBtn;
-    }
-
-    public TabFrameItemPanel getTabFrameItemPanel() {
-        return tabFrameItemPanel;
-    }
 }

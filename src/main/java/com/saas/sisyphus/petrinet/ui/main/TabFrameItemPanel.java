@@ -2,10 +2,12 @@ package com.saas.sisyphus.petrinet.ui.main;
 
 import com.formdev.flatlaf.icons.FlatTreeExpandedIcon;
 import com.formdev.flatlaf.ui.FlatEmptyBorder;
+import lombok.Data;
 
 import javax.swing.*;
 import java.awt.*;
 
+@Data
 public class TabFrameItemPanel extends JPanel {
 
     private JLabel titleLabel;
@@ -20,6 +22,12 @@ public class TabFrameItemPanel extends JPanel {
 
         setLayout(new BorderLayout());
         add(headerPanel, BorderLayout.NORTH);
+
+        //set default size
+        Dimension size = getSize();
+        size.height = 350;
+        setPreferredSize(size);
+
         add(contentComponent, BorderLayout.CENTER);
     }
 
@@ -39,19 +47,4 @@ public class TabFrameItemPanel extends JPanel {
         headerPanel.setBorder(new MLineBorder(1, false, false, true, true));
     }
 
-    public JLabel getTitleLabel() {
-        return titleLabel;
-    }
-
-    public JPanel getHeaderPanel() {
-        return headerPanel;
-    }
-
-    public JToolBar getHeaderToolBar() {
-        return headerToolBar;
-    }
-
-    public JButton getMinimizeButton() {
-        return minimizeButton;
-    }
 }

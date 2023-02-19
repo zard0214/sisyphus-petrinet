@@ -1,11 +1,14 @@
 package com.saas.sisyphus.petrinet.ui.main;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+@Slf4j
 public class TabFramePanel extends JPanel
         implements MouseListener, MouseMotionListener {
 
@@ -48,7 +51,6 @@ public class TabFramePanel extends JPanel
                     btn.setSelected(false);
                 }
             }
-
             contentPanel.removeAll();
             contentPanel.add(itemContent);
 
@@ -62,6 +64,8 @@ public class TabFramePanel extends JPanel
             }
             updateUI();
         });
+
+
         tabFrameBar.addBarItem(itemButton);
     }
 

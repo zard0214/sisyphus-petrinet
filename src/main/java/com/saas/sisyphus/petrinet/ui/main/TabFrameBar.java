@@ -1,12 +1,14 @@
 package com.saas.sisyphus.petrinet.ui.main;
 
 import com.formdev.flatlaf.util.UIScale;
+import lombok.Data;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.ArrayList;
 
+@Data
 public class TabFrameBar extends JPanel {
 
     private JToolBar toolBar = new JToolBar();
@@ -31,10 +33,6 @@ public class TabFrameBar extends JPanel {
         barItem.setBorder(new EmptyBorder(UIScale.scale(4), UIScale.scale(10), UIScale.scale(4), UIScale.scale(10)));
         toolBar.add(barItem);
         this.toolBarItems.add(barItem);
-    }
-
-    public ArrayList<JToggleButton> getToolBarItems() {
-        return toolBarItems;
     }
 
     public void addBarRightItem(JComponent component) {
