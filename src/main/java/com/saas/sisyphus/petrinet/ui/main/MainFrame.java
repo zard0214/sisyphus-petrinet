@@ -19,8 +19,11 @@ import java.awt.event.MouseListener;
 @Slf4j
 public class MainFrame extends JFrame{
 
-    private JTextArea jTextArea = new JTextArea();
     private JTextArea logArea = new JTextArea();
+    private NorthPanel northPanel = new NorthPanel();
+    private EastPanel eastPanel = new EastPanel();
+    private CenterPanel centerPanel = new CenterPanel();
+    private WestPanel westPanel = new WestPanel();
     private JScrollPane jScrollPane = new JScrollPane();
     private JOptionPane warningOptionPane = new JOptionPane();
     private JButton cleanButton = new JButton(new FlatClearIcon());
@@ -44,7 +47,10 @@ public class MainFrame extends JFrame{
 
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new BorderLayout());
-        jPanel.add(jTextArea, BorderLayout.CENTER);
+        jPanel.add(northPanel, BorderLayout.NORTH);
+        jPanel.add(eastPanel, BorderLayout.EAST);
+        jPanel.add(centerPanel, BorderLayout.CENTER);
+        jPanel.add(westPanel, BorderLayout.WEST);
         jPanel.add(tabFramePanel, BorderLayout.SOUTH);
         this.add(jPanel);
     }
