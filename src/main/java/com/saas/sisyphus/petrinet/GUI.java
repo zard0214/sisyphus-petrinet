@@ -3,7 +3,6 @@ package com.saas.sisyphus.petrinet;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.util.SystemInfo;
-import com.saas.sisyphus.petrinet.graphics.Home;
 import com.saas.sisyphus.petrinet.graphics.Main;
 import lombok.extern.slf4j.Slf4j;
 

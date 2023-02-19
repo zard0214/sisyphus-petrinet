@@ -20,6 +20,9 @@
         <flatlaf-intellij-themes.version>3.0</flatlaf-intellij-themes.version>
         <miglayout-swing.version>11.0</miglayout-swing.version>
         <slf4j-api.version>2.0.3</slf4j-api.version>
+        <logback-classic.version>1.4.4</logback-classic.version>
+        <logback-core.version>1.4.4</logback-core.version>
+
     </properties>
 
     <dependencies>
@@ -27,6 +30,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback-core.version}</version>
         </dependency>
 
         <dependency>
