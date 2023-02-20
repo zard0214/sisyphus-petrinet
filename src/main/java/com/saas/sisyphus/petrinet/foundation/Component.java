@@ -8,7 +8,7 @@ import lombok.Data;
  * @date Created in 17/02/2023 10:08
  */
 @Data
-public class Component {
+public abstract class Component {
 
     public String id;
 
@@ -21,4 +21,6 @@ public class Component {
     public static long getNextSequenceId() {
         return SEQUENCE_ID ++;
     }
+
+    public abstract String getLabel();
 }

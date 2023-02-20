@@ -2,6 +2,8 @@ package com.saas.sisyphus.petrinet.foundation;
 
 import lombok.Data;
 
+import java.util.LinkedList;
+
 /**
  * @author Zhecheng Zhao
  * @RegistrationNo 220186627
@@ -11,4 +13,5 @@ import lombok.Data;
 @Data
 public class TokenSet {
 
+    private LinkedList<Token> tokenList = new LinkedList<>();
 }

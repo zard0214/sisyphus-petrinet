@@ -3,8 +3,7 @@ package com.saas.sisyphus.petrinet.foundation;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 /**
  * @author Zhecheng Zhao
@@ -15,14 +14,24 @@ import java.util.List;
 @Data
 public class PetriNet {
 
-    private static List<? extends Component> componentList;
+    private static LinkedList<? extends Component> componentList;
+
+    private LinkedList<Place> placesList;
+    private LinkedList<Transition> transitionsList;
+    private LinkedList<InputArc> inputArcsList;
+    private LinkedList<OutputArc> outputArcsList;
 
     PetriNet(){
 
     }
 
     public void init(){
-        componentList = new ArrayList<>();
+        componentList = new LinkedList<>();
+
+        placesList = new LinkedList();
+        transitionsList = new LinkedList();
+        inputArcsList = new LinkedList();
+        outputArcsList = new LinkedList();
     }
 
 }
