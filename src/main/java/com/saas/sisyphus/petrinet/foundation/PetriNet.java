@@ -16,10 +16,10 @@ public class PetriNet {
 
     private static LinkedList<? extends Component> componentList;
 
-    private LinkedList<Place> placesList;
-    private LinkedList<Transition> transitionsList;
-    private LinkedList<InputArc> inputArcsList;
-    private LinkedList<OutputArc> outputArcsList;
+//    private LinkedList<Place> placesList;
+//    private LinkedList<Transition> transitionsList;
+//    private LinkedList<InputArc> inputArcsList;
+//    private LinkedList<OutputArc> outputArcsList;
 
     PetriNet(){
 
@@ -28,10 +28,10 @@ public class PetriNet {
     public void init(){
         componentList = new LinkedList<>();
 
-        placesList = new LinkedList();
-        transitionsList = new LinkedList();
-        inputArcsList = new LinkedList();
-        outputArcsList = new LinkedList();
+//        placesList = new LinkedList();
+//        transitionsList = new LinkedList();
+//        inputArcsList = new LinkedList();
+//        outputArcsList = new LinkedList();
     }
 
 }

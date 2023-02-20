@@ -21,7 +21,7 @@ import java.awt.event.MouseListener;
 @Slf4j
 public class MainFrame extends JFrame{
 
-    private JTextArea console = new JTextArea();
+    public JTextArea console = new JTextArea();
     private ManuPanel manuPanel = new ManuPanel();
     private EditorPanel editorPanel = new EditorPanel();
     private PetriNetCanvas petriNetCanvas = new PetriNetCanvas();
@@ -37,6 +37,8 @@ public class MainFrame extends JFrame{
     private void initComponents() {
 
         initLogArea();
+
+        initConsoleUtil();
 
         initJScrollPane();
 
@@ -57,6 +59,10 @@ public class MainFrame extends JFrame{
         jPanel.add(tabFramePanel, BorderLayout.SOUTH);
 
         this.add(jPanel);
+    }
+
+    private void initConsoleUtil() {
+        ConsoleUtil.console = console;
     }
 
     private void initJScrollPane() {

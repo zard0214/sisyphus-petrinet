@@ -14,13 +14,17 @@ import java.util.Date;
 @Slf4j
 public class ConsoleUtil {
 
-    public static void log(JTextArea textArea, String log) {
-        textArea.append("\n\n");
-        textArea.append(DateFormatUtils.format(new Date(), "dd/MM/yyyy HH:mm:ss") + " ");
-        textArea.append("\n\n");
-        textArea.append(log);
-        textArea.append("\n");
-        textArea.setCaretPosition(textArea.getText().length());
+    public static JTextArea console;
+
+    public static void log(String log) {
+        console.append("\n\n");
+        console.append(DateFormatUtils.format(new Date(), "dd/MM/yyyy HH:mm:ss") + " ");
+        console.append("\n\n");
+        console.append(log);
+        console.append("\n\n");
+        console.append("-----------------------------");
+        console.append("\n");
+        console.setCaretPosition(console.getText().length());
     }
 
     public static void clear(JTextArea textArea) {

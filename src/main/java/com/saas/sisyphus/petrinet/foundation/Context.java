@@ -10,5 +10,5 @@ public class Context {
 
     public static int mode = Mode.IDLE;
 
-    public static PetriNet petriNet;
+    public static PetriNet petriNet = new PetriNet();
 }

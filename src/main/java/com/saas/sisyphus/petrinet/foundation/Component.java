@@ -23,4 +23,8 @@ public abstract class Component {
     }
 
     public abstract String getLabel();
+
+    public Component preComponent;
+
+    public Component nextComponent;
 }

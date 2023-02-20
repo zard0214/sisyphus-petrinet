@@ -6,6 +6,7 @@ package com.saas.sisyphus.petrinet.ui.main;
 
 import com.saas.sisyphus.petrinet.foundation.Context;
 import com.saas.sisyphus.petrinet.foundation.Mode;
+import com.saas.sisyphus.petrinet.ui.utils.ConsoleUtil;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,13 +21,31 @@ public class ManuPanel extends JPanel {
     }
 
     private void setOnClickListener() {
-        place.addActionListener(e -> Context.mode = Mode.ADD_PLACE);
-        transition.addActionListener(e -> Context.mode = Mode.ADD_TRANSITION);
-        arc.addActionListener(e -> Context.mode = Mode.ADD_ARC);
-        inhibitor.addActionListener(e -> Context.mode = Mode.ADD_INHIBITOR);
-        run.addActionListener(e -> Context.mode = Mode.RUN);
-        step.addActionListener(e -> Context.mode = Mode.STEP);
-        delete.addActionListener(e -> Context.mode = Mode.DELETE);
+        place.addActionListener(e -> {
+            Context.mode = Mode.ADD_PLACE;
+            ConsoleUtil.log("add place");
+        });
+        transition.addActionListener(e -> {
+            Context.mode = Mode.ADD_TRANSITION;
+            ConsoleUtil.log("add transition");
+        });
+        arc.addActionListener(e -> {
+            Context.mode = Mode.ADD_ARC;
+            ConsoleUtil.log("add arc");
+        });
+        inhibitor.addActionListener(e -> {
+            Context.mode = Mode.ADD_INHIBITOR;
+            ConsoleUtil.log("add inhibitor");
+        });
+        run.addActionListener(e -> {
+            Context.mode = Mode.RUN;
+        });
+        step.addActionListener(e -> {
+            Context.mode = Mode.STEP;
+        });
+        delete.addActionListener(e -> {
+            Context.mode = Mode.DELETE;
+        });
     }
 
     private void initComponents() {
@@ -42,11 +61,11 @@ public class ManuPanel extends JPanel {
 
         //======== this ========
         setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
-        . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing
+        . swing. border. EmptyBorder( 0, 0, 0, 0) , "", javax. swing
         . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
-        Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
+        Font ("" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
         ) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
-        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName (
+        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("" .equals (e .getPropertyName (
         ) )) throw new RuntimeException( ); }} );
         setLayout(new GridLayout());
 
