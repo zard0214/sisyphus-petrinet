@@ -3,6 +3,7 @@ package com.saas.sisyphus.petrinet;
 import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.util.SystemInfo;
+import com.saas.sisyphus.petrinet.foundation.Context;
 import com.saas.sisyphus.petrinet.ui.main.MainFrame;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +23,9 @@ public class GUI {
     static {
         FlatDarculaLaf.setup();
 //        FlatLightLaf.setup();
+
+        //init petriNet global context
+        Context.petriNet.init();
     }
 
     public static void main(String[] args) {

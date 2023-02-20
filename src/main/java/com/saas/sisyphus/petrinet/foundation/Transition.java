@@ -1,5 +1,6 @@
 package com.saas.sisyphus.petrinet.foundation;
 
+import lombok.Data;
 
 /**
  * @author Zhecheng Zhao
@@ -7,7 +8,8 @@ package com.saas.sisyphus.petrinet.foundation;
  * @date Created in 09/02/2023 20:51
  */
 
-public class Transition extends Component implements PetriNetEngine<Context> {
+@Data
+public class Transition extends Component {
 
     public Transition(){
         this.id = String.valueOf(SEQUENCE_ID);
@@ -19,25 +21,5 @@ public class Transition extends Component implements PetriNetEngine<Context> {
             label = "Transition "+ id;
         }
         return label;
-    }
-
-    @Override
-    public void fire(Context context) {
-
-    }
-
-    @Override
-    public boolean canAccept(Context context) {
-        return false;
-    }
-
-    @Override
-    public void start(Context context) {
-
-    }
-
-    @Override
-    public void terminate(Context context) {
-
     }
 }

@@ -1,7 +1,7 @@
 package com.saas.sisyphus.petrinet.ui.component;
 
 import com.saas.sisyphus.petrinet.foundation.Context;
-import com.saas.sisyphus.petrinet.foundation.Operation;
+import com.saas.sisyphus.petrinet.foundation.Mode;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,28 +38,36 @@ public class PetriNetCanvas extends ScrollPane implements MouseListener {
         if (button == MouseEvent.BUTTON1) {
             //pop up clean dialog
             switch (Context.mode){
-                case Operation.SELECT:
+                case Mode.SELECT:
                     break;
-                case Operation.ADD_PLACE:
+                case Mode.ADD_PLACE:
                     addPlace(e);
                     break;
-                case Operation.ADD_TRANSITION:
+                case Mode.ADD_TRANSITION:
                     addTransition(e);
                     break;
-                case Operation.ADD_ARC:
+                case Mode.ADD_ARC:
                     addArc(e);
                     break;
-                case Operation.ADD_INHIBITOR:
+                case Mode.ADD_INHIBITOR:
                     addInhibitor(e);
                     break;
-                case Operation.DELETE:
+                case Mode.DELETE:
+                    delComponent(e);
+                    break;
+                default:
                     break;
             }
         }
     }
 
-    private void addInhibitor(MouseEvent e) {
+    private void delComponent(MouseEvent e) {
 
+    }
+
+    private void addInhibitor(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
     }
 
     private void addPlace(MouseEvent e) {

@@ -14,7 +14,7 @@ public class Component {
 
     public static long SEQUENCE_ID = 0;
 
-    public int volume = 0;
+    public int capability = 0;
 
     public String label;
 

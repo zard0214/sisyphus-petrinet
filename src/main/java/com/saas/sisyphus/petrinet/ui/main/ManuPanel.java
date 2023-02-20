@@ -5,7 +5,7 @@
 package com.saas.sisyphus.petrinet.ui.main;
 
 import com.saas.sisyphus.petrinet.foundation.Context;
-import com.saas.sisyphus.petrinet.foundation.Operation;
+import com.saas.sisyphus.petrinet.foundation.Mode;
 
 import java.awt.*;
 import javax.swing.*;
@@ -20,13 +20,13 @@ public class ManuPanel extends JPanel {
     }
 
     private void setOnClickListener() {
-        place.addActionListener(e -> Context.mode = Operation.ADD_PLACE);
-        transition.addActionListener(e -> Context.mode = Operation.ADD_TRANSITION);
-        arc.addActionListener(e -> Context.mode = Operation.ADD_ARC);
-        inhibitor.addActionListener(e -> Context.mode = Operation.ADD_INHIBITOR);
-        run.addActionListener(e -> Context.mode = Operation.RUN);
-        step.addActionListener(e -> Context.mode = Operation.STEP);
-        delete.addActionListener(e -> Context.mode = Operation.DELETE);
+        place.addActionListener(e -> Context.mode = Mode.ADD_PLACE);
+        transition.addActionListener(e -> Context.mode = Mode.ADD_TRANSITION);
+        arc.addActionListener(e -> Context.mode = Mode.ADD_ARC);
+        inhibitor.addActionListener(e -> Context.mode = Mode.ADD_INHIBITOR);
+        run.addActionListener(e -> Context.mode = Mode.RUN);
+        step.addActionListener(e -> Context.mode = Mode.STEP);
+        delete.addActionListener(e -> Context.mode = Mode.DELETE);
     }
 
     private void initComponents() {
@@ -41,10 +41,13 @@ public class ManuPanel extends JPanel {
         delete = new JButton();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(
-        0,0,0,0), "",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder
-        .BOTTOM,new java.awt.Font("",java.awt.Font.BOLD,12),java.awt.Color.
-        red), getBorder())); addPropertyChangeListener(e -> {if("".equals(e.getPropertyName()))throw new RuntimeException();});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax.
+        swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border
+        . TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg"
+        ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder
+        ( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java
+        .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er" .equals (e .getPropertyName () )) throw new RuntimeException
+        ( ); }} );
         setLayout(new GridLayout());
 
         //---- place ----
