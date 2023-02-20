@@ -8,9 +8,9 @@ import java.awt.*;
  * @RegistrationNo 220186627
  * @date Created in 19/02/2023 12:30
  */
-public class EastPanel extends JPanel {
+public class EditorPanel extends JPanel {
 
-    public EastPanel(){
+    public EditorPanel(){
         initComponents();
         Dimension size = getSize();
         size.width = 0;

@@ -4,11 +4,16 @@
 
 package com.saas.sisyphus.petrinet.ui.component;
 
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
 import java.awt.geom.*;
 
 /**
  * @author zard
  */
+@Slf4j
+@Data
 public class Transition2D extends Rectangle2D {
 
     public Transition2D() {

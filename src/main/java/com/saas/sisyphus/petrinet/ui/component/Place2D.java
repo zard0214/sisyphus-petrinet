@@ -4,6 +4,7 @@
 
 package com.saas.sisyphus.petrinet.ui.component;
 
+import com.saas.sisyphus.petrinet.foundation.Place;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,9 +15,9 @@ import java.awt.geom.*;
  */
 @Slf4j
 @Data
-public class Place2D extends Rectangle2D {
+public class Place2D extends Ellipse2D {
 
-    private com.saas.sisyphus.petrinet.foundation.Place place;
+    private Place place;
 
     public Place2D() {
         initComponents();
@@ -48,29 +49,19 @@ public class Place2D extends Rectangle2D {
     }
 
     @Override
-    public void setRect(double x, double y, double w, double h) {
+    public void setFrame(double x, double y, double w, double h) {
 
-    }
-
-    @Override
-    public int outcode(double x, double y) {
-        return 0;
-    }
-
-    @Override
-    public Rectangle2D createIntersection(Rectangle2D r) {
-        return null;
-    }
-
-    @Override
-    public Rectangle2D createUnion(Rectangle2D r) {
-        return null;
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - Zhecheng Zhao
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
+    }
+
+    @Override
+    public Rectangle2D getBounds2D() {
+        return null;
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off

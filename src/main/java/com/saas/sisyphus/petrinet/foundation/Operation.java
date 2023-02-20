@@ -15,12 +15,14 @@ public class Operation {
 
     public static final int ADD_ARC = 3;
 
-    public static final int RUN = 4;
+    public static final int ADD_INHIBITOR = 4;
 
-    public static final int STEP = 5;
+    public static final int RUN = 5;
 
-    public static final int DELETE_COMPONENT = 6;
+    public static final int STEP = 6;
 
-    public static final int DEL = 7;
+    public static final int DELETE = 7;
+
+    public static final int DRAG = 8;
 
 }

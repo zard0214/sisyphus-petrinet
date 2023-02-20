@@ -17,7 +17,7 @@ import java.util.LinkedList;
  */
 @Slf4j
 @Data
-public class PetriNetCanvas extends Canvas implements MouseListener {
+public class PetriNetCanvas extends ScrollPane implements MouseListener {
 
     private LinkedList<Place2D> place2DLinkedList = new LinkedList<>();
     private LinkedList<Transition2D> transition2DLinkedList = new LinkedList<>();
@@ -35,7 +35,6 @@ public class PetriNetCanvas extends Canvas implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         int button = e.getButton();
-        log.info("mouseClicked :" + button);
         if (button == MouseEvent.BUTTON1) {
             //pop up clean dialog
             switch (Context.mode){
@@ -50,10 +49,17 @@ public class PetriNetCanvas extends Canvas implements MouseListener {
                 case Operation.ADD_ARC:
                     addArc(e);
                     break;
-                case Operation.DELETE_COMPONENT:
+                case Operation.ADD_INHIBITOR:
+                    addInhibitor(e);
+                    break;
+                case Operation.DELETE:
                     break;
             }
         }
+    }
+
+    private void addInhibitor(MouseEvent e) {
+
     }
 
     private void addPlace(MouseEvent e) {

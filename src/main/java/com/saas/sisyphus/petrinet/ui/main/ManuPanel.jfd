@@ -8,26 +8,37 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "place"
 				"text": "add place"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "transition"
 				"text": "add transition"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "arc"
 				"text": "add arc"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "inhibitor"
+				"text": "add inhibitor"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "run"
 				"text": "run"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "step"
 				"text": "step"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "delete"
 				"text": "delete"
+				"preferredSize": new java.awt.Dimension( 70, 30 )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

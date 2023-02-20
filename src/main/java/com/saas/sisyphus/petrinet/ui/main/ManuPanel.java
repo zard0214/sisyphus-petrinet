@@ -8,15 +8,13 @@ import com.saas.sisyphus.petrinet.foundation.Context;
 import com.saas.sisyphus.petrinet.foundation.Operation;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
  * @author zard
  */
-public class NorthPanel extends JPanel {
-    public NorthPanel() {
+public class ManuPanel extends JPanel {
+    public ManuPanel() {
         initComponents();
         setOnClickListener();
     }
@@ -25,9 +23,10 @@ public class NorthPanel extends JPanel {
         place.addActionListener(e -> Context.mode = Operation.ADD_PLACE);
         transition.addActionListener(e -> Context.mode = Operation.ADD_TRANSITION);
         arc.addActionListener(e -> Context.mode = Operation.ADD_ARC);
+        inhibitor.addActionListener(e -> Context.mode = Operation.ADD_INHIBITOR);
         run.addActionListener(e -> Context.mode = Operation.RUN);
         step.addActionListener(e -> Context.mode = Operation.STEP);
-        delete.addActionListener(e -> Context.mode = Operation.DELETE_COMPONENT);
+        delete.addActionListener(e -> Context.mode = Operation.DELETE);
     }
 
     private void initComponents() {
@@ -36,41 +35,51 @@ public class NorthPanel extends JPanel {
         place = new JButton();
         transition = new JButton();
         arc = new JButton();
+        inhibitor = new JButton();
         run = new JButton();
         step = new JButton();
         delete = new JButton();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border
-        .EmptyBorder ( 0, 0 ,0 , 0) ,  "" , javax. swing .border . TitledBorder. CENTER ,javax
-        . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "", java .awt . Font. BOLD ,
-        12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans
-        .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "" .equals ( e.
-        getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(
+        0,0,0,0), "",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder
+        .BOTTOM,new java.awt.Font("",java.awt.Font.BOLD,12),java.awt.Color.
+        red), getBorder())); addPropertyChangeListener(e -> {if("".equals(e.getPropertyName()))throw new RuntimeException();});
         setLayout(new GridLayout());
 
         //---- place ----
         place.setText("add place");
+        place.setPreferredSize(new Dimension(70, 30));
         add(place);
 
         //---- transition ----
         transition.setText("add transition");
+        transition.setPreferredSize(new Dimension(70, 30));
         add(transition);
 
         //---- arc ----
         arc.setText("add arc");
+        arc.setPreferredSize(new Dimension(70, 30));
         add(arc);
+
+        //---- inhibitor ----
+        inhibitor.setText("add inhibitor");
+        inhibitor.setPreferredSize(new Dimension(70, 30));
+        add(inhibitor);
 
         //---- run ----
         run.setText("run");
+        run.setPreferredSize(new Dimension(70, 30));
         add(run);
 
         //---- step ----
         step.setText("step");
+        step.setPreferredSize(new Dimension(70, 30));
         add(step);
 
         //---- delete ----
         delete.setText("delete");
+        delete.setPreferredSize(new Dimension(70, 30));
         add(delete);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
@@ -80,6 +89,7 @@ public class NorthPanel extends JPanel {
     private JButton place;
     private JButton transition;
     private JButton arc;
+    private JButton inhibitor;
     private JButton run;
     private JButton step;
     private JButton delete;

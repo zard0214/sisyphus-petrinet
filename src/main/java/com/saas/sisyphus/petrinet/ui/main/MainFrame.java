@@ -22,9 +22,8 @@ import java.awt.event.MouseListener;
 public class MainFrame extends JFrame{
 
     private JTextArea console = new JTextArea();
-    private NorthPanel northPanel = new NorthPanel();
-    private EastPanel eastPanel = new EastPanel();
-    private CenterPanel centerPanel = new CenterPanel();
+    private ManuPanel manuPanel = new ManuPanel();
+    private EditorPanel editorPanel = new EditorPanel();
     private PetriNetCanvas petriNetCanvas = new PetriNetCanvas();
     private WestPanel westPanel = new WestPanel();
     private JScrollPane jScrollPane = new JScrollPane();
@@ -51,28 +50,13 @@ public class MainFrame extends JFrame{
 
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new BorderLayout());
-        jPanel.add(northPanel, BorderLayout.NORTH);
-        jPanel.add(eastPanel, BorderLayout.EAST);
-//        jPanel.add(centerPanel, BorderLayout.CENTER);
+        jPanel.add(manuPanel, BorderLayout.NORTH);
+        jPanel.add(editorPanel, BorderLayout.EAST);
         jPanel.add(petriNetCanvas, BorderLayout.CENTER);
         jPanel.add(westPanel, BorderLayout.WEST);
         jPanel.add(tabFramePanel, BorderLayout.SOUTH);
 
         this.add(jPanel);
-
-        //test
-        Runnable runnable = () -> {
-            while (true) {
-                try {
-                    Thread.sleep(5000);
-                    ConsoleUtil.log(console, "T1 fired.\n" + "----------------------------");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
     }
 
     private void initJScrollPane() {
