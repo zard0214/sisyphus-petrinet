@@ -6,7 +6,10 @@ package com.saas.sisyphus.petrinet.ui.main;
 
 import com.saas.sisyphus.petrinet.foundation.Context;
 import com.saas.sisyphus.petrinet.foundation.Mode;
+import com.saas.sisyphus.petrinet.foundation.Place;
+import com.saas.sisyphus.petrinet.foundation.Transition;
 import com.saas.sisyphus.petrinet.ui.utils.ConsoleUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import javax.swing.*;
@@ -14,6 +17,7 @@ import javax.swing.*;
 /**
  * @author zard
  */
+@Slf4j
 public class ManuPanel extends JPanel {
     public ManuPanel() {
         initComponents();
@@ -60,13 +64,12 @@ public class ManuPanel extends JPanel {
         delete = new JButton();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
-        . swing. border. EmptyBorder( 0, 0, 0, 0) , "", javax. swing
-        . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
-        Font ("" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
-        ) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
-        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("" .equals (e .getPropertyName (
-        ) )) throw new RuntimeException( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
         setLayout(new GridLayout());
 
         //---- place ----

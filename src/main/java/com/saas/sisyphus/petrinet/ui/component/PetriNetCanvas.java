@@ -5,9 +5,13 @@ import com.saas.sisyphus.petrinet.foundation.Mode;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
 import java.util.LinkedList;
 
 /**
@@ -17,23 +21,71 @@ import java.util.LinkedList;
  */
 @Slf4j
 @Data
-public class PetriNetCanvas extends ScrollPane implements MouseListener {
+public class PetriNetCanvas extends JPanel implements MouseListener {
 
     private LinkedList<Place2D> place2DLinkedList = new LinkedList<>();
     private LinkedList<Transition2D> transition2DLinkedList = new LinkedList<>();
     private LinkedList<Arc2D> arc2DLinkedList = new LinkedList<>();
 
     public PetriNetCanvas(){
-        this.setBackground(new Color(43, 43, 43));
+//        this.setBackground(new Color(43, 43, 43));
         Dimension size = getSize();
         setPreferredSize(size);
         setVisible(true);
         this.addMouseListener(this);
     }
 
+    private void delComponent(MouseEvent e) {
+
+    }
+
+    private void addInhibitor(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+    }
+
+    private void addPlace(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        Ellipse2D circle = new Ellipse2D.Double();
+        circle.setFrameFromCenter(x, y, x + 25, y + 25);
+        ((Graphics2D) this.getGraphics()).draw(circle);
+    }
+
+    private void addTransition(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();;
+        Rectangle2D rectangle2D = new Rectangle2D.Double();
+        rectangle2D.setFrameFromCenter(x, y, x + 25, y + 25);
+        ((Graphics2D) this.getGraphics()).draw(rectangle2D);
+    }
+
+    private int tempX = -1;
+    private int tempY = -1;
+
+    private void addArc(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        if(tempX == -1){
+            tempX = x;
+            tempY = y;
+        }else{
+            Line2D lin = new Line2D.Float(tempX, tempY, x, y);
+            ((Graphics2D) this.getGraphics()).draw(lin);
+            tempX = -1;
+            tempY = -1;
+        }
+    }
+
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
         int button = e.getButton();
         if (button == MouseEvent.BUTTON1) {
             //pop up clean dialog
@@ -59,36 +111,6 @@ public class PetriNetCanvas extends ScrollPane implements MouseListener {
                     break;
             }
         }
-    }
-
-    private void delComponent(MouseEvent e) {
-
-    }
-
-    private void addInhibitor(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-    }
-
-    private void addPlace(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-    }
-
-    private void addTransition(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-    }
-
-    private void addArc(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-    }
-
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
     }
 
     @Override

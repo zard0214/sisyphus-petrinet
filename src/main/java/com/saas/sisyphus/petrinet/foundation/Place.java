@@ -2,7 +2,6 @@ package com.saas.sisyphus.petrinet.foundation;
 
 import lombok.Data;
 
-import java.util.LinkedList;
 
 /**
  * @author Zhecheng Zhao
@@ -13,11 +12,6 @@ import java.util.LinkedList;
 @Data
 public class Place extends Component {
 
-    private TokenSet tokenSet = new TokenSet();
-
-    private LinkedList<InputArc> inputArcsList = new LinkedList<>();
-    private LinkedList<OutputArc> outputArcsList = new LinkedList<>();
-
     public Place(){
         this.id = String.valueOf(SEQUENCE_ID);
         getNextSequenceId();
@@ -25,7 +19,7 @@ public class Place extends Component {
 
     @Override
     public String getLabel() {
-        if(label.isEmpty()){
+        if(label == null || label.isEmpty()){
             label = "Place "+ id;
         }
         return label;

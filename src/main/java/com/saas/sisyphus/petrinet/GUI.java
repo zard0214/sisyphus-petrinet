@@ -21,8 +21,8 @@ public class GUI {
     static boolean screenshotsMode = Boolean.parseBoolean(System.getProperty("screenshotsMode"));
 
     static {
-        FlatDarculaLaf.setup();
-//        FlatLightLaf.setup();
+//        FlatDarculaLaf.setup();
+        FlatLightLaf.setup();
 
         //init petriNet global context
         Context.petriNet.init();

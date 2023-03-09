@@ -33,6 +33,13 @@ public interface PetriNetEngine<C> {
     void start(C context);
 
     /**
+     * move token from p1 to p2
+     * @param p1
+     * @param p2
+     */
+    void transition(C p1, C p2);
+
+    /**
      * Terminate transition under context
      * @param context context
      */
